@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/quicksilver" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/louis-george-cafe" rel="stylesheet">
+    <title>🔥 Objectif 50 🔥</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <div class="bg moving-div"></div>
+
+    <div class="content fade-scroll">
+        <p class="title scroll-title">Objectif 50</p>
+        <div class="description">Retrouvez dès à présent le trailer du reportage <em>Objectif 50</em> juste <a
+                href="https://oui" target="_blank" rel="noopener noreferrer">ici</a>
+            <link>
+        </div>
+        <div class="mag">
+            <p>Le reportage a également eu droit à un article dans le magazine sportif <em>Xtrem</em>.<br>
+                Victime de son succès, les stocks du périodique ont été écoulé en moins de 14 jours après sa sortie.<br>
+                Considéré comme déjà culte, posséder un de ces exemplaires revient à avoir de l'or entre les mains !</p>
+            <img class="zoom-img" src="img/mag.jpg" alt="mag">
+        </div>
+    </div>
+
+    <script>
+        function handleScrollFade() {
+            const elements = document.querySelectorAll('.fade-scroll');
+            const windowHeight = window.innerHeight;
+
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const start = windowHeight;
+                const end = 0;
+                const progress = 1 - Math.min(1, Math.max(0, (rect.top - end) / (start - end)));
+                el.style.opacity = progress;
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollFade);
+        window.addEventListener('load', handleScrollFade);
+    </script>
+
+    <script>
+        const movingDiv = document.querySelector('.moving-div');
+
+        window.addEventListener('scroll', () => {
+            // Distance en pixels que tu veux que la div suive
+            const scrollY = window.scrollY;
+            
+            const speed = 0.8; // 50% de la vitesse du scroll
+            movingDiv.style.top = `${scrollY * speed}px`;
+        });
+    </script>
+</body>
+
+</html>
