@@ -26,7 +26,7 @@ header {
 }
 
 .moving-div {
-    top :0;
+    top: 0;
 }
 
 .content {
@@ -40,6 +40,7 @@ header {
 .title {
     color: #5E0303;
     font-size: 150px;
+    padding: 0 24px;
     font-family: 'Quicksilver', sans-serif;
     text-align: center;
 }
@@ -52,6 +53,7 @@ header {
 .description {
     color: #3F4246;
     margin-top: 200px;
+    padding: 0 24px;
     font-size: 24px;
     text-align: center;
     font-family: 'Louis George Café', sans-serif;
@@ -67,6 +69,7 @@ header {
 
 .mag p {
     margin: 200px 0 25px 0;
+    padding: 0 24px;
     text-align: center;
     font-family: 'Louis George Café', sans-serif;
     color: #3F4246;
@@ -84,4 +87,36 @@ header {
 .zoom-img:hover {
     transform: scale(1.05);
     /* agrandit l'image à 110% */
+}
+
+@media (max-width: 1200px) {
+    .mag img {
+        max-width: 60vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 100px;
+    }
+
+    .mag img {
+        max-width: 70vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 80px;
+    }
+
+    .mag img {
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 60px;
+    }
 }
